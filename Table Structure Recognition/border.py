@@ -29,8 +29,8 @@ def border(table,image):
     # print("Y = ",Y)
 
     tableXML = etree.Element("table")
-    name = etree.Element("name")
-    name.text = "border"
+    name = etree.Element("name", label="border")
+    
     tableXML.append(name)
     Tcoords = etree.Element("Coords", points=str(table[0])+","+str(table[1])+" "+str(table[2])+","+str(table[3])+" "+str(table[2])+","+str(table[3])+" "+str(table[2])+","+str(table[1]))
     tableXML.append(Tcoords)
