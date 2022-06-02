@@ -29,6 +29,9 @@ def border(table,image):
     # print("Y = ",Y)
 
     tableXML = etree.Element("table")
+    name = etree.Element("category_id")
+    name.text = 0
+    tableXML.append(name)
     Tcoords = etree.Element("Coords", points=str(table[0])+","+str(table[1])+" "+str(table[2])+","+str(table[3])+" "+str(table[2])+","+str(table[3])+" "+str(table[2])+","+str(table[1]))
     tableXML.append(Tcoords)
     cv2.rectangle(imag,(table[0],table[1]),(table[2],table[3]),(0,255,0),2)
@@ -50,7 +53,7 @@ def border(table,image):
             two = str(cellBox[0]+box[0])+","+str(cellBox[3]+box[1])
             three = str(cellBox[2]+box[0])+","+str(cellBox[3]+box[1])
             four = str(cellBox[2]+box[0])+","+str(cellBox[1]+box[1])
-
+            
             coords = etree.Element("Coords", points=one+" "+two+" "+three+" "+four)
 
             cell.append(coords)
