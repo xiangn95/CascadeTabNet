@@ -362,8 +362,8 @@ def borderless(table, image, res_cells):
         return r-1
     
     tableXML = etree.Element("table")
-    name = etree.Element("name")
-    name.text = "borderless"
+    name = etree.Element("name", label="borderless")
+    
     tableXML.append(name)
     Tcoords = etree.Element("Coords", points=str(table[0])+","+str(table[1])+" "+str(table[0])+","+str(table[3])+" "+str(table[2])+","+str(table[3])+" "+str(table[2])+","+str(table[1]))
     tableXML.append(Tcoords)
